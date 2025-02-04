@@ -1,0 +1,27 @@
+<configuration>
+
+    <!-- Console Appender Configuration -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- File Appender Configuration -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/healthcare-analytics.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root Logger Configuration -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+
+    <!-- Specific Logger for Package -->
+    <logger name="com.healthcare.analytics" level="DEBUG"/>
+
+</configuration>
